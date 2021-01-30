@@ -327,4 +327,4 @@ def generate_table(course, by_state, page_current, page_size, course_figure):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
