@@ -24,6 +24,7 @@ with open('data/india_state.json') as f:
     counties = json.load(f)
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY, './assets/base.css'])
+server = app.server
 
 india = ind.get_data()
 slider_min = math.floor(min(ind.get_preparation()) / 10) * 10
