@@ -25,6 +25,7 @@ with open('data/india_state.json') as f:
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY, './assets/base.css'])
 server = app.server
+app.title = "Indi-foods!"
 
 india = ind.get_data()
 slider_min = math.floor(min(ind.get_preparation()) / 10) * 10
@@ -125,6 +126,15 @@ app.layout = \
                 html.A(['dataset'], href="https://www.kaggle.com/nehaprabhavalkar/indian-food-101"),
                 ". Dataset was created by ",
                 html.A(['Neha Prabhavalkar'], href="https://www.kaggle.com/nehaprabhavalkar/"),
+                "."
+            ],width="auto"),
+        ], justify="center"),
+        dbc.Row([
+            dbc.Col([
+                "Music is by ",
+                html.A(['Siddhartha Corsus'], href="https://freemusicarchive.org/music/Siddhartha"),
+                " and song name is  ",
+                html.A(['Follow This River to the Sun'], href="https://freemusicarchive.org/music/Siddhartha/mystic-gate-songs-for-the-hidden-peak/follow-this-river-to-the-sun"),
                 "."
             ],width="auto"),
         ], justify="center"),

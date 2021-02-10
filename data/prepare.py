@@ -5,6 +5,7 @@ import copy
 india = pd.read_csv('data/indian_food.csv')
 india = india.replace(-1, np.nan)
 india = india.replace("-1", np.nan)
+
 india.diet = india.diet.astype("category")
 india[['flavor_profile']] = india[['flavor_profile']].fillna(value="surprise")
 india.flavor_profile = india.flavor_profile.astype("category")
