@@ -63,6 +63,7 @@ app.layout = \
                              ind.get_ingredients()],
                     multi=True,
                     searchable=True,
+                    placeholder="Select owned ingredients",
                     style={"overflowY": "visible"},
                     value=[]),
             ], width=True),
@@ -181,8 +182,8 @@ def display_choropleth(chosen, prep_time):
     india_c.ing2 = [list(filter(lambda x: x not in chosen, i)) for i in l]
     india_c['score'] = [len(i) for i in india_c.ing2]
 
-    if len(chosen) > 0:
-        india_c = india_c[india_c.score < 5]
+    # if len(chosen) > 0:
+    #     india_c = india_c[india_c.score < 5]
 
     india_c = india_c[india_c.prep_time <= prep_time]
 

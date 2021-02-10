@@ -2,17 +2,8 @@ import pandas as pd
 import numpy as np
 import copy
 
-pd.read_csv('data/indian_food.csv')
-india = pd.read_csv('data/indian_food.csv')
-india = india.replace(-1, np.nan)
-india = india.replace("-1", np.nan)
-india.diet = india.diet.astype("category")
-india.flavor_profile = india.flavor_profile.astype("category")
-india.course = india.course.astype("category")
-india.state = india.state.astype("category")
-# india.region = india.region.astype("category")
-india = india.fillna(india.mean().apply(np.ceil))
-india = india.drop(['region'], axis=1)
+india = pd.read_csv('data/india_prepared.csv')
+
 
 def get_data():
     return india

@@ -37,6 +37,10 @@ body {
     height: inherit;
 }
 
+.logo-link img {
+    padding: 15%;
+}
+
 .logo {
     height: inherit;
     display: flex;
